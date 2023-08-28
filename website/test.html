@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive Website with Download Link</title>
+<title>Encrypted Download</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -20,37 +20,32 @@
   .container {
     padding: 2em;
   }
-  button {
-    padding: 0.5em 1em;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
 </style>
 </head>
 <body>
   <header>
-    <h1>Interactive Website with Download Link</h1>
+    <h1>Encrypted Download</h1>
   </header>
   <div class="container">
-    <h2>Welcome to our Simple and Elegant Website</h2>
-    <p>This website showcases the power of HTML and JavaScript working together.</p>
-    <p>Click the button below to change the text:</p>
-    <button id="changeTextButton">Change Text</button>
-    <p id="changeableText">Hello, world!</p>
-    
-    <!-- 下载链接 -->
-    <a href="path/to/your/file.pdf" download="filename.pdf">Download PDF</a>
+    <h2>Welcome to our Secure Download Section</h2>
+    <p>To access the encrypted file, please enter the password:</p>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button id="downloadButton">Download Encrypted File</button>
   </div>
   <script>
-    const changeTextButton = document.getElementById('changeTextButton');
-    const changeableText = document.getElementById('changeableText');
-    
-    const newText = 'Welcome to the New Text!';
+    const passwordInput = document.getElementById('passwordInput');
+    const downloadButton = document.getElementById('downloadButton');
 
-    changeTextButton.addEventListener('click', () => {
-      changeableText.textContent = newText;
+    const correctPassword = 'your_password_here';
+    const encryptedFileURL = 'path/to/your/encrypted/file';
+
+    downloadButton.addEventListener('click', () => {
+      const enteredPassword = passwordInput.value;
+      if (enteredPassword === correctPassword) {
+        window.location.href = encryptedFileURL;
+      } else {
+        alert('Incorrect password. Please try again.');
+      }
     });
   </script>
 </body>
