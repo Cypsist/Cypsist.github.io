@@ -3,61 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fading In Animation</title>
+<title>Photo Gallery</title>
 <style>
   body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-  }
-  header {
-    background-color: #3498db;
-    color: white;
-    padding: 1em;
-  }
-  .container {
-    padding: 2em;
-  }
-  button {
-    padding: 0.5em 1em;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
   }
   
-  /* 渐入动画 */
-  #changeableText {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+  .gallery {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
-  .fade-in {
-    opacity: 1;
+  
+  .photo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .caption {
+    font-style: italic;
+    color: #555;
   }
 </style>
 </head>
 <body>
-  <header>
-    <h1>Fading In Animation</h1>
-  </header>
-  <div class="container">
-    <h2>Welcome to our Animated Website</h2>
-    <p>This website showcases the power of HTML and CSS animations.</p>
-    <p>Click the button below to change the text:</p>
-    <button id="changeTextButton">Change Text</button>
-    <p id="changeableText" class="fade-in">Hello, world!</p>
+<div class="gallery">
+  <div class="photo">
+    <img src="photo1.jpg" alt="Photo 1">
+    <p class="caption">优美的自然风景</p>
   </div>
-  <script>
-    const changeTextButton = document.getElementById('changeTextButton');
-    const changeableText = document.getElementById('changeableText');
-    
-    const newText = 'Welcome to the New Text!';
-
-    changeTextButton.addEventListener('click', () => {
-      changeableText.textContent = newText;
-    });
-  </script>
+  <div class="photo">
+    <img src="photo2.jpg" alt="Photo 2">
+    <p class="caption">宁静的湖泊日落</p>
+  </div>
+  <div class="photo">
+    <img src="photo3.jpg" alt="Photo 3">
+    <p class="caption">城市夜景的美丽</p>
+  </div>
+</div>
 </body>
 </html>
