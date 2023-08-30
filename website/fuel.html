@@ -42,20 +42,45 @@
     transition: opacity 0.5s ease-in-out;
   }
   
-  .message {
+  .button-container {
     text-align: center;
-    font-size: 18px;
     margin-top: 20px;
+  }
+  
+  .button {
+    background-color: #1E90FF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .link-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1E90FF;
+    text-decoration: none;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
   }
 </style>
 </head>
 <body>
 <div class="gallery">
+  <h1 class="link-title"><a href="https://www.example.com">进入另一个网址</a></h1>
   <div class="photo">
     <img id="currentImage" src="../website/images/1.png" alt="Photo 1">
     <p class="caption" id="currentCaption">优美的自然风景</p>
   </div>
-  <p class="message">点击图片切换到下一张</p>
+  <div class="button-container">
+    <button class="button" onclick="nextPhoto()">下一张</button>
+  </div>
 </div>
 
 <script>
