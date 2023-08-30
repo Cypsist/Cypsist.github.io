@@ -19,12 +19,49 @@
   .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 10px 20px;
     background-color: #1E90FF;
     color: white;
-    font-size: 16px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
     font-weight: bold;
+  }
+  
+  .menu-button {
+    background-color: #1E90FF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .menu a {
+    color: #555;
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+  }
+  
+  .menu.active {
+    display: flex;
   }
   
   .gallery {
@@ -82,45 +119,11 @@
     display: block;
     text-align: center;
   }
-
-  .menu-button {
-    background-color: #1E90FF;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .menu {
-    display: none;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-    position: absolute;
-    top: 40px;
-    right: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-
-  .menu a {
-    color: #555;
-    text-decoration: none;
-    padding: 5px 0;
-    font-size: 14px;
-    text-align: right;
-  }
-  
-  .menu.active {
-    display: flex;
-  }
 </style>
 </head>
 <body>
 <div class="header">
-  <div></div>
+  <h1>Photo Gallery</h1>
   <button class="menu-button" onclick="toggleMenu()">菜单</button>
   <div class="menu" id="menu">
     <a href="#">模块一</a>
