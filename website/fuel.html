@@ -44,12 +44,10 @@
   .button-container {
     text-align: center;
     margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
   
-  .button {
+  .prev-button,
+  .next-button {
     background-color: #1E90FF;
     border: none;
     color: white;
@@ -59,6 +57,14 @@
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
+  }
+  
+  .prev-button {
+    margin-right: 20px;
+  }
+  
+  .next-button {
+    margin-left: 20px;
   }
   
   .link-title {
@@ -125,8 +131,8 @@
     <p class="caption" id="currentCaption">优美的自然风景</p>
   </div>
   <div class="button-container">
-    <button class="button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
-    <button class="button" id="nextButton" onclick="nextPhoto()">下一张</button>
+    <button class="prev-button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
+    <button class="next-button" id="nextButton" onclick="nextPhoto()">下一张</button>
   </div>
 </div>
 
