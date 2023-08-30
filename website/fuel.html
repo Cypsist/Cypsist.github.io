@@ -123,7 +123,8 @@
     <p class="caption" id="currentCaption">优美的自然风景</p>
   </div>
   <div class="button-container">
-    <button class="button" onclick="nextPhoto()">下一张</button>
+    <button class="button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
+    <button class="button" id="nextButton" onclick="nextPhoto()">下一张</button>
   </div>
 </div>
 
@@ -137,11 +138,21 @@
   let currentIndex = 0;
   let transitioning = false;
 
+  const prevButton = document.getElementById('prevButton');
+  const nextButton = document.getElementById('nextButton');
+
+  function updateButtonVisibility() {
+    prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+    nextButton.style.display = currentIndex === images.length - 1 ? 'none' : 'block';
+  }
+
   function nextPhoto() {
     if (transitioning) return;
     transitioning = true;
 
-    currentIndex = (currentIndex + 1) % images.length;
+    currentIndex++;
+    updateButtonVisibility();
+
     const currentImage = document.getElementById('currentImage');
     const currentCaption = document.getElementById('currentCaption');
 
@@ -156,15 +167,31 @@
       currentCaption.style.opacity = 1;
 
       transitioning = false;
-
-      if (currentIndex === images.length - 1) {
-        showAlert("已经到达最后一张图片");
-      }
     }, 500);
   }
 
-  function showAlert(message) {
-    alert(message);
+  function prevPhoto() {
+    if (transitioning) return;
+    transitioning = true;
+
+    currentIndex--;
+    updateButtonVisibility();
+
+    const currentImage = document.getElementById('currentImage');
+    const currentCaption = document.getElementById('currentCaption');
+
+    currentImage.style.opacity = 0;
+    currentCaption.style.opacity = 0;
+
+    setTimeout(() => {
+      currentImage.src = images[currentIndex].src;
+      currentCaption.textContent = images[currentIndex].caption;
+
+      currentImage.style.opacity = 1;
+      currentCaption.style.opacity = 1;
+
+      transitioning = false;
+    }, 500);
   }
 
   function toggleMenu() {
@@ -175,6 +202,8 @@
   function navigateToPage(url) {
     window.location.href = url;
   }
+
+  updateButtonVisibility();
 </script>
 </body>
 </html>
