@@ -42,34 +42,10 @@
     transition: opacity 0.5s ease-in-out;
   }
   
-  .button-container {
+  .message {
     text-align: center;
+    font-size: 18px;
     margin-top: 20px;
-  }
-  
-  .button {
-    background-color: #1E90FF;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .link-button {
-    background-color: #1E90FF;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
   }
 </style>
 </head>
@@ -79,10 +55,7 @@
     <img id="currentImage" src="../website/images/1.png" alt="Photo 1">
     <p class="caption" id="currentCaption">优美的自然风景</p>
   </div>
-  <div class="button-container">
-    <button class="button" onclick="nextPhoto()">下一张</button>
-    <a class="link-button" href="https://www.example.com">进入另一个网址</a>
-  </div>
+  <p class="message">点击图片切换到下一张</p>
 </div>
 
 <script>
