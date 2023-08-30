@@ -21,7 +21,6 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    position: relative;
   }
   
   .photo {
@@ -45,6 +44,9 @@
   .button-container {
     text-align: center;
     margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   .button {
@@ -57,8 +59,6 @@
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-    display: block;
-    margin: 0 auto;
   }
   
   .link-title {
@@ -124,10 +124,10 @@
     <img id="currentImage" src="../website/images/1.png" alt="Photo 1">
     <p class="caption" id="currentCaption">优美的自然风景</p>
   </div>
-</div>
-<div class="button-container">
-  <button class="button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
-  <button class="button" id="nextButton" onclick="nextPhoto()">下一张</button>
+  <div class="button-container">
+    <button class="button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
+    <button class="button" id="nextButton" onclick="nextPhoto()">下一张</button>
+  </div>
 </div>
 
 <script>
