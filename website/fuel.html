@@ -11,34 +11,29 @@
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #87CEEB, #1E90FF);
     display: flex;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
   }
   
-  .sidebar {
-    width: 200px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
     background-color: #1E90FF;
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-  }
-  
-  .sidebar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 0;
-    width: 100%;
-    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
   }
   
   .gallery {
-    flex: 1;
     max-width: 800px;
     background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
   }
   
   .photo {
@@ -75,6 +70,7 @@
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
+    margin-right: 10px;
   }
   
   .link-title {
@@ -86,14 +82,51 @@
     display: block;
     text-align: center;
   }
+
+  .menu-button {
+    background-color: #1E90FF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .menu a {
+    color: #555;
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+    text-align: right;
+  }
+  
+  .menu.active {
+    display: flex;
+  }
 </style>
 </head>
 <body>
-<div class="sidebar">
-  <h2>功能栏</h2>
-  <a href="#">模块1</a>
-  <a href="#">模块2</a>
-  <a href="#">模块3</a>
+<div class="header">
+  <div></div>
+  <button class="menu-button" onclick="toggleMenu()">菜单</button>
+  <div class="menu" id="menu">
+    <a href="#">模块一</a>
+    <a href="#">模块二</a>
+    <a href="#">模块三</a>
+  </div>
 </div>
 <div class="gallery">
   <h1 class="link-title"><a href="https://www.example.com">进入另一个网址</a></h1>
@@ -136,6 +169,11 @@
 
       transitioning = false;
     }, 500);
+  }
+
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('active');
   }
 </script>
 </body>
