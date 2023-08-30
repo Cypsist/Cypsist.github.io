@@ -33,11 +33,13 @@
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+    transition: opacity 0.5s ease-in-out;
   }
   
   .caption {
     font-style: italic;
     color: #555;
+    transition: opacity 0.5s ease-in-out;
   }
   
   .button-container {
@@ -78,13 +80,28 @@
   ];
 
   let currentIndex = 0;
+  let transitioning = false;
 
   function nextPhoto() {
+    if (transitioning) return;
+    transitioning = true;
+
     currentIndex = (currentIndex + 1) % images.length;
     const currentImage = document.getElementById('currentImage');
     const currentCaption = document.getElementById('currentCaption');
-    currentImage.src = images[currentIndex].src;
-    currentCaption.textContent = images[currentIndex].caption;
+
+    currentImage.style.opacity = 0;
+    currentCaption.style.opacity = 0;
+
+    setTimeout(() => {
+      currentImage.src = images[currentIndex].src;
+      currentCaption.textContent = images[currentIndex].caption;
+
+      currentImage.style.opacity = 1;
+      currentCaption.style.opacity = 1;
+
+      transitioning = false;
+    }, 500);
   }
 </script>
 </body>
