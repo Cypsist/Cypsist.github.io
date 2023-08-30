@@ -1,4 +1,3 @@
-theme: minima
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,22 +39,53 @@ theme: minima
     font-style: italic;
     color: #555;
   }
+  
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .button {
+    background-color: #1E90FF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 </style>
 </head>
 <body>
 <div class="gallery">
   <div class="photo">
-    <img src="../website/images/1.png" alt="Photo 1">
-    <p class="caption">优美的自然风景</p>
+    <img id="currentImage" src="../website/images/1.png" alt="Photo 1">
+    <p class="caption" id="currentCaption">优美的自然风景</p>
   </div>
-  <div class="photo">
-    <img src="../website/images/2.png" alt="Photo 2">
-    <p class="caption">宁静的湖泊日落</p>
-  </div>
-  <div class="photo">
-    <img src="../website/images/3.png" alt="Photo 3">
-    <p class="caption">城市夜景的美丽</p>
+  <div class="button-container">
+    <button class="button" onclick="nextPhoto()">下一张</button>
   </div>
 </div>
+
+<script>
+  const images = [
+    { src: '../website/images/1.png', caption: '优美的自然风景' },
+    { src: '../website/images/2.png', caption: '宁静的湖泊日落' },
+    { src: '../website/images/3.png', caption: '城市夜景的美丽' }
+  ];
+
+  let currentIndex = 0;
+
+  function nextPhoto() {
+    currentIndex = (currentIndex + 1) % images.length;
+    const currentImage = document.getElementById('currentImage');
+    const currentCaption = document.getElementById('currentCaption');
+    currentImage.src = images[currentIndex].src;
+    currentCaption.textContent = images[currentIndex].caption;
+  }
+</script>
 </body>
 </html>
