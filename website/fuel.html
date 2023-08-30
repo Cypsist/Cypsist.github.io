@@ -11,31 +11,64 @@
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom, #87CEEB, #1E90FF);
     display: flex;
-    align-items: center;
-    justify-content: center;
     min-height: 100vh;
   }
-  
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.3);
+    transform: translateX(-250px);
+    transition: transform 0.3s ease-in-out;
+    z-index: 2;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .menu-button {
+    background-color: #1E90FF;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
   .gallery {
     max-width: 800px;
     background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    flex-grow: 1;
+    margin-left: 250px;
   }
-  
+
   .photo {
     text-align: center;
     margin-bottom: 20px;
   }
-  
+
   .photo img {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
     transition: opacity 0.5s ease-in-out;
   }
-  
+
   .caption {
     font-style: italic;
     color: #555;
@@ -46,7 +79,7 @@
     text-align: center;
     margin-top: 20px;
   }
-  
+
   .button {
     background-color: #1E90FF;
     border: none;
@@ -59,7 +92,7 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
+
   .link-title {
     font-size: 24px;
     font-weight: bold;
@@ -72,6 +105,15 @@
 </style>
 </head>
 <body>
+<div class="sidebar" id="sidebar">
+  <h1 class="link-title">功能栏</h1>
+  <button class="menu-button" onclick="toggleSidebar()">展开功能</button>
+  <ul>
+    <li><a href="#">模块1</a></li>
+    <li><a href="#">模块2</a></li>
+    <li><a href="#">模块3</a></li>
+  </ul>
+</div>
 <div class="gallery">
   <h1 class="link-title"><a href="https://www.example.com">进入另一个网址</a></h1>
   <div class="photo">
@@ -113,6 +155,11 @@
 
       transitioning = false;
     }, 500);
+  }
+
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
   }
 </script>
 </body>
