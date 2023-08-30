@@ -24,11 +24,11 @@
 </head>
 <body>
   <header>
-    <h1>Encrypted Download</h1>
+    <h1>Days we have</h1>
   </header>
   <div class="container">
-    <h2>Welcome to our Secure Download Section</h2>
-    <p>To access the encrypted file, please enter the password:</p>
+    <h2>Welcome, to this place, guess what it has.</h2>
+    <p>In order to access the encrypted file, please tell me your birthday with only number</p>
     <input type="password" id="passwordInput" placeholder="Enter password">
     <button id="downloadButton">Download Encrypted File</button>
   </div>
@@ -36,8 +36,8 @@
     const passwordInput = document.getElementById('passwordInput');
     const downloadButton = document.getElementById('downloadButton');
 
-    const correctPassword = '123456';
-    const encryptedFileURL = 'https://github.com/Cypsist/a';
+    const correctPassword = '20031004';
+    const encryptedFileURL = 'fuel.html';
 
     downloadButton.addEventListener('click', () => {
       const enteredPassword = passwordInput.value;
