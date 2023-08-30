@@ -59,6 +59,18 @@
     border-radius: 5px;
     cursor: pointer;
   }
+  
+  .link-button {
+    background-color: #1E90FF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+  }
 </style>
 </head>
 <body>
@@ -69,7 +81,7 @@
   </div>
   <div class="button-container">
     <button class="button" onclick="nextPhoto()">下一张</button>
-    <button class="button" onclick="navigateToAnotherPage()">进入另一个网址</button>
+    <a class="link-button" href="https://www.example.com">进入另一个网址</a>
   </div>
 </div>
 
@@ -103,10 +115,6 @@
 
       transitioning = false;
     }, 500);
-  }
-
-  function navigateToAnotherPage() {
-    window.location.href = "https://pan.quark.cn/s/23430739fd70"; // Replace with the desired URL
   }
 </script>
 </body>
