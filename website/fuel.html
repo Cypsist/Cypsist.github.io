@@ -21,6 +21,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
   }
   
   .photo {
@@ -46,8 +47,7 @@
     margin-top: 20px;
   }
   
-  .prev-button,
-  .next-button {
+  .button {
     background-color: #1E90FF;
     border: none;
     color: white;
@@ -57,14 +57,8 @@
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .prev-button {
-    margin-right: 20px;
-  }
-  
-  .next-button {
-    margin-left: 20px;
+    display: block;
+    margin: 0 auto;
   }
   
   .link-title {
@@ -130,10 +124,10 @@
     <img id="currentImage" src="../website/images/1.png" alt="Photo 1">
     <p class="caption" id="currentCaption">优美的自然风景</p>
   </div>
-  <div class="button-container">
-    <button class="prev-button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
-    <button class="next-button" id="nextButton" onclick="nextPhoto()">下一张</button>
-  </div>
+</div>
+<div class="button-container">
+  <button class="button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
+  <button class="button" id="nextButton" onclick="nextPhoto()">下一张</button>
 </div>
 
 <script>
