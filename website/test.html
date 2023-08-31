@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .gallery {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .photo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .photo img {
+    max-width: 100%;
+    max-height: 400px; /* Set the maximum height for the images */
+    border-radius: 5px;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .caption {
+    font-style: italic;
+    color: #555;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .button {
+    background-color: #1E90FF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .link-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1E90FF;
+    text-decoration: none;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="gallery">
+  <div class="photo">
+    <img id="currentImage" src="../website/images/1.png" alt="Photo 1">
+    <p class="caption" id="currentCaption">优美的自然风景</p>
+  </div>
+  <div class="button-container">
+    <button class="button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
+    <button class="button" id="nextButton" onclick="nextPhoto()">下一张</button>
+  </div>
+  <h1 class="link-title"><a href="https://www.example.com" target="_blank">进入另一个网址</a></h1>
+</div>
+
+<script>
+  const images = [
+    { src: '../website/images/1.png', caption: '优美的自然风景' },
+    { src: '../website/images/2.png', caption: '宁静的湖泊日落' },
+    { src: '../website/images/3.png', caption: '城市夜景的美丽' }
+  ];
+
+  let currentIndex = 0;
+  let transitioning = false;
+
+  const prevButton = document.getElementById('prevButton');
+  const nextButton = document.getElementById('nextButton');
+
+  function updateButtonVisibility() {
+    prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+    nextButton.style.display = currentIndex === images.length - 1 ? 'none' : 'block';
+  }
+
+  function nextPhoto() {
+    if (transitioning) return;
+    transitioning = true;
+
+    currentIndex++;
+    updateButtonVisibility();
+
+    const currentImage = document.getElementById('currentImage');
+    const currentCaption = document.getElementById('currentCaption');
+
+    currentImage.style.opacity = 0;
+    currentCaption.style.opacity = 0;
+
+    setTimeout(() => {
+      currentImage.src = images[currentIndex].src;
+      currentCaption.textContent = images[currentIndex].caption;
+
+      currentImage.style.opacity = 1;
+      currentCaption.style.opacity = 1;
+
+      transitioning = false;
+    }, 500);
+  }
+
+  function prevPhoto() {
+    if (transitioning) return;
+    transitioning = true;
+
+    currentIndex--;
+    updateButtonVisibility();
+
+    const currentImage = document.getElementById('currentImage');
+    const currentCaption = document.getElementById('currentCaption');
+
+    currentImage.style.opacity = 0;
+    currentCaption.style.opacity = 0;
+
+    setTimeout(() => {
+      currentImage.src = images[currentIndex].src;
+      currentCaption.textContent = images[currentIndex].caption;
+
+      currentImage.style.opacity = 1;
+      currentCaption.style.opacity = 1;
+
+      transitioning = false;
+    }, 500);
+  }
+
+  updateButtonVisibility();
+</script>
+</body>
+</html>
