@@ -21,6 +21,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
   }
   
   .photo {
@@ -61,14 +62,18 @@
     cursor: pointer;
   }
   
-  .link-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #1E90FF;
-    text-decoration: none;
-    margin-top: 20px;
-    display: block;
+  .link-button {
+    background-color: #1E90FF;
+    border: none;
+    color: white;
+    padding: 10px 20px;
     text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
   }
   
   .menu {
@@ -104,7 +109,7 @@
     <button class="button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
     <button class="button" id="nextButton" onclick="nextPhoto()">下一张</button>
   </div>
-  <h1 class="link-title"><a href="https://www.example.com" target="_blank">进入另一个网址</a></h1>
+  <h1 class="link-button"><a href="https://www.example.com" target="_blank">点击进入另一个网址</a></h1>
 </div>
 
 <script>
@@ -172,8 +177,6 @@
       transitioning = false;
     }, 500);
   }
-
-  updateButtonVisibility();
 </script>
 </body>
 </html>
