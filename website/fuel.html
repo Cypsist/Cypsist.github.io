@@ -96,7 +96,6 @@
 </head>
 <body>
 <div class="gallery">
-  <h1 class="link-title"><a href="https://www.example.com">进入另一个网址</a></h1>
   <div class="photo">
     <img id="currentImage" src="../website/images/1.png" alt="Photo 1">
     <p class="caption" id="currentCaption">优美的自然风景</p>
@@ -105,6 +104,7 @@
     <button class="button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
     <button class="button" id="nextButton" onclick="nextPhoto()">下一张</button>
   </div>
+  <h1 class="link-title"><a href="https://www.example.com" target="_blank">进入另一个网址</a></h1>
 </div>
 
 <script>
@@ -171,10 +171,6 @@
 
       transitioning = false;
     }, 500);
-  }
-
-  function navigateToPage(url) {
-    window.location.href = url;
   }
 
   updateButtonVisibility();
