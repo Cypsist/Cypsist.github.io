@@ -97,21 +97,50 @@
 <body>
 <div class="gallery">
   <div class="photo">
-    <img id="currentImage" src="../images/wxyimages/IMG_4685.jpg" alt="Photo 1">
-    <p class="caption" id="currentCaption">第一次拍到的背影</p>
+    <img id="currentImage" src="../images/wxyimages/IMG_4133.jpg" alt="Photo 1">
+    <p class="caption" id="currentCaption">回忆</p>
   </div>
   <div class="button-container">
     <button class="button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
     <button class="button" id="nextButton" onclick="nextPhoto()">下一张</button>
   </div>
-  <h1 class="link-title"><a href="https://www.example.com" target="_blank">Download Memory</a></h1>
+  <h1 class="link-title"><a href="https://pan.quark.cn/s/23430739fd70" target="_blank">Download Memory</a></h1>
 </div>
 
 <script>
   const images = [
-    { src: '../images/wxyimages/IMG_4685.jpg', caption: '第一次拍到的背影' },
-    { src: '../images/wxyimages/IMG_4692.jpg', caption: '宁静的湖泊日落' },
-    { src: '../images/wxyimages/IMG_4693.jpg', caption: '城市夜景的美丽' }
+    { src: '../images/wxyimages/IMG_4133.jpg', caption: '回忆' },
+    { src: '../images/wxyimages/IMG_4235.jpg', caption: '第一次一起去辰山植物园' },
+    { src: '../images/wxyimages/IMG_4240.jpg', caption: '后面有人在拍婚纱照' },
+    { src: '../images/wxyimages/IMG_4283.jpg', caption: '好好看的月季' },
+    { src: '../images/wxyimages/IMG_4253.jpg', caption: '胖的很的羊驼' },
+    { src: '../images/wxyimages/IMG_4257.jpg', caption: '孔雀对我们开屏哈哈哈' },
+    { src: '../images/wxyimages/IMG_4264.jpg', caption: '水边的黑天鹅' },
+    { src: '../images/wxyimages/IMG_4285.jpg', caption: '第一次一起去吃泰餐' },
+    { src: '../images/wxyimages/IMG_4292.jpg', caption: '第一次一起rua路边的猫猫，好喜欢猫猫，好喜欢和你' },
+    { src: '../images/wxyimages/IMG_4327.jpg', caption: '第一次一起去外滩，好多好多人，但是有你就好' },
+    { src: '../images/wxyimages/IMG_4421.jpg', caption: '第一次和你一起去猫咖，好多好多猫！好开心' },
+    { src: '../images/wxyimages/IMG_4411.jpg', caption: '猫猫！' },
+    { src: '../images/wxyimages/IMG_4426.jpg', caption: 'rua猫猫' },
+    { src: '../images/wxyimages/IMG_4648.jpg', caption: '偷偷拍的背影，好像你不喜欢我给你照相' },
+    { src: '../images/wxyimages/IMG_4685.jpg', caption: '路上的背影' },
+    { src: '../images/wxyimages/IMG_4693.jpg', caption: '某一天好好看的晚霞，还有好好看的你' },
+    { src: '../images/wxyimages/IMG_4695.jpg', caption: '一起牵手看晚霞' },
+    { src: '../images/wxyimages/IMG_4697.jpg', caption: '第一次在晚霞里比心，和你' },
+    { src: '../images/wxyimages/IMG_4735.jpg', caption: '第一次和你去南京，好期待' },
+    { src: '../images/wxyimages/IMG_4753.jpg', caption: '第一次一起喝茶颜' },
+    { src: '../images/wxyimages/IMG_4771.jpg', caption: '第一次去红山动物园，和你，好开心' },
+    { src: '../images/wxyimages/IMG_4900.jpg', caption: '第一次给你当枕头，好紧张' },
+    { src: '../images/wxyimages/IMG_4914.jpg', caption: '第一次一起看大鹅，' },
+    { src: '../images/wxyimages/e3bf3541afca175b0d685a039c3ccd0e.jpg', caption: 'Rainbow，以雨为弓' },
+    { src: '../images/wxyimages/IMG_5933.jpg', caption: '第一次一起去鲁迅纪念馆，' },
+    { src: '../images/wxyimages/IMG_5935.jpg', caption: '第一次一起去甜爱路，右边有你的缩写哈哈哈' },
+    { src: '../images/wxyimages/IMG_5936.jpg', caption: '第一次一起去内山书店，' },
+    { src: '../images/wxyimages/IMG_5939.jpg', caption: '第一次一起去听演唱会哈哈哈，在外面也算听吧 },
+    { src: '../images/wxyimages/IMG_5948.jpg', caption: '第一次一起去看艺术馆' },
+    { src: '../images/wxyimages/IMG_5997.jpg', caption: '第一次和帽子合影' },
+    { src: '../images/wxyimages/IMG_5998.jpg', caption: '第一次和你在七夕合影，我还是留了下来哈哈哈哈，放心不会给别人看的' },
+    { src: '../images/wxyimages/IMG_5999.jpg', caption: '回来路上的猫猫，莫名的悲伤' }
   ];
 
   let currentIndex = 0;
