@@ -70,45 +70,27 @@
     display: block;
     text-align: center;
   }
-  
-  .menu {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 40px;
-    left: 10px;
-    display: none;
-  }
-  
-  .menu-item {
-    padding: 10px;
-    font-size: 16px;
-    color: #333;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .menu-item:hover {
-    background-color: #F0F0F0;
-  }
 </style>
 </head>
 <body>
 <div class="gallery">
   <div class="photo">
-    <img id="currentImage" src="../images/wxyimages/IMG_4133.jpg" alt="Photo 1">
-    <p class="caption" id="currentCaption">回忆</p>
+    <img id="currentImage" src="../website/images/1.png" alt="Photo 1">
+    <p class="caption" id="currentCaption">优美的自然风景</p>
   </div>
   <div class="button-container">
     <button class="button" id="prevButton" onclick="prevPhoto()" style="display: none;">上一张</button>
     <button class="button" id="nextButton" onclick="nextPhoto()">下一张</button>
   </div>
-  <h1 class="link-title"><a href="https://pan.quark.cn/s/23430739fd70" target="_blank">Download Memory</a></h1>
+  <h1 class="link-title"><a href="https://www.example.com" target="_blank">进入另一个网址</a></h1>
 </div>
 
 <script>
-  
+  const images = [
+    { src: '../website/images/1.png', caption: '优美的自然风景' },
+    { src: '../website/images/2.png', caption: '宁静的湖泊日落' },
+    { src: '../website/images/3.png', caption: '城市夜景的美丽' }
+  ];
 
   let currentIndex = 0;
   let transitioning = false;
